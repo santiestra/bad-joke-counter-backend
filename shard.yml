@@ -1,0 +1,6 @@
+name: bad-jokes
+version: 0.0.1
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal

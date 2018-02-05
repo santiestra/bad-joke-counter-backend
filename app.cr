@@ -16,7 +16,11 @@ ws "/" do |socket|
   # Handle incoming message and dispatch it to all connected clients
   socket.on_message do |message|
     sockets.each do |a_socket|
-      a_socket.send message.to_json
+      if message == "ping"
+        a_socket.send "pong"
+      else
+        a_socket.send message.to_json
+      end
     end
   end
 
